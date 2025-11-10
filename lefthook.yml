@@ -1,0 +1,5 @@
+pre-commit:
+  commands:
+    linkcard:
+      glob: '*.{md}'
+      run: bun script/createLinkCard.ts {staged_files}

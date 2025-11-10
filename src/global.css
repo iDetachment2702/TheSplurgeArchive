@@ -1,0 +1,192 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Primary: オレンジ系 - コントラスト比とアクセシビリティを向上 */
+  --color-primary-50: #fff8f0;
+  --color-primary-100: #ffecd9;
+  --color-primary-200: #ffd6ad;
+  --color-primary-300: #ffb876;
+  --color-primary-400: #ff923d;
+  --color-primary-500: #ff7416;
+  --color-primary-600: #e35a0c;
+  --color-primary-700: #bc430c;
+  --color-primary-800: #953612;
+  --color-primary-900: #792f12;
+  --color-primary-950: #421507;
+
+  /* Secondary: 青緑系 - オレンジとの判別性を向上、色覚多様性に配慮 */
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #b9e6fe;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+  --color-secondary-950: #082f49;
+
+  /* Neutral: 灰色系 - テキストと背景のコントラスト比を最適化 */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+  --color-neutral-950: #09090b;
+
+  /* Warning */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
+
+  /* Error */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+  --color-error-950: #450a0a;
+}
+
+body {
+  font-family:
+    'BIZ UDPGothic',
+    'BIZ UDGothic',
+    'UD デジタル 教科書体 N-R',
+    'Yu Gothic UI',
+    'Meiryo UI',
+    'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans',
+    'Noto Sans CJK JP',
+    'Noto Sans JP',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary-50);
+}
+
+.article-display ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+  
+.article-display a {
+  text-decoration: underline;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-primary-700);
+  }
+}
+
+/* Link Card Styles */
+.link-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  margin: 1rem 0;
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+}
+
+.link-card-content {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.link-card-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.link-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.link-card-description {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.link-card-url {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.link-card-favicon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.link-card-image {
+  flex-shrink: 0;
+  width: auto;
+  max-width: 350px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.link-card-image img {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .link-card-content {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .link-card-image {
+    width: 100%;
+    height: 180px;
+  }
+}
